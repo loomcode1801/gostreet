@@ -7,23 +7,26 @@
     android:background="#121111"
     tools:context=".MainActivity" >
 
-
     <ImageView
         android:id="@+id/imageView15"
-        android:layout_width="347dp"
-        android:layout_height="794dp"
-        app:srcCompat="@drawable/rectangle_475__1_"
-        tools:layout_editor_absoluteX="-7dp"
-        tools:layout_editor_absoluteY="-27dp" />
+        android:layout_width="310dp"
+        android:layout_height="781dp"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.523"
+        app:srcCompat="@drawable/rectangle_475__1_" />
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="388dp"
         android:layout_height="77dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintHorizontal_bias="0.478"
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -64,25 +67,31 @@
         android:id="@+id/imageView12"
         android:layout_width="220dp"
         android:layout_height="104dp"
-        app:srcCompat="@drawable/pure_passion"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="538dp" />
-
-    <ImageView
-        android:id="@+id/imageView17"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ktm"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="250dp" />
+        android:layout_marginBottom="72dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/pure_passion" />
 
     <ImageView
         android:id="@+id/imageView18"
-        android:layout_width="254dp"
-        android:layout_height="183dp"
-        app:srcCompat="@drawable/fd8db93c_55ad_49b9_a202_905a87d03f94_removebg_preview"
-        tools:layout_editor_absoluteX="86dp"
-        tools:layout_editor_absoluteY="67dp" />
+        android:layout_width="300dp"
+        android:layout_height="161dp"
+        android:layout_marginStart="188dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/fd8db93c_55ad_49b9_a202_905a87d03f94_removebg_preview" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="427dp"
+        android:layout_height="440dp"
+        android:layout_marginTop="84dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/moto2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
