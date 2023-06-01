@@ -200,8 +200,13 @@
         android:id="@+id/imageView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/proveedor"
-        tools:layout_editor_absoluteX="38dp"
-        tools:layout_editor_absoluteY="146dp" />
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.159"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView11"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/proveedor" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
