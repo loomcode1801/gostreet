@@ -7,6 +7,7 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -66,4 +67,10 @@ public class MainActivity extends AppCompatActivity {
 
         }
     };
-}
+    public void navegar (View view){
+    Intent miIntent =new Intent(MainActivity.this,MainActivity2.class);
+    startActivity(miIntent);
+    }
+
+    }
+

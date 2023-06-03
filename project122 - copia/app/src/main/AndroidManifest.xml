@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project122">
         <activity
+            android:name=".Activity_Perfil"
+            android:exported="false" />
+        <activity
             android:name=".RegistroProveedor_Activity"
             android:exported="false" />
         <activity
