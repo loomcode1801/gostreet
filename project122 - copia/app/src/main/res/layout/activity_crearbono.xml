@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#121111"
-    tools:context=".Activity_Registro">
+    tools:context=".Activity_crearbono">
 
 
     <ImageView
@@ -19,18 +19,18 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="404dp"
-        android:layout_height="436dp"
+        android:layout_width="403dp"
+        android:layout_height="487dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.748">
+        app:layout_constraintVertical_bias="0.638">
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/editTextfechainicio"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -38,57 +38,98 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
+            android:paddingStart="20dp"
+            android:hint="Fecha Inicio"
             android:ems="10"
-            android:hint="Usuario"
-            android:inputType="textPersonName"
+            android:inputType="date"
+            android:textColor="#B9151414"
+            android:textColorHint="#464646"/>
+
+        <EditText
+            android:id="@+id/editTextfechafinal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_background"
+            android:paddingStart="20dp"
+            android:hint="Fecha Final"
+            android:ems="10"
+            android:inputType="date"
+            android:textColor="#B9151414"
+            android:textColorHint="#464646"/>
+
+        <EditText
+            android:id="@+id/editTexttiempoinicio"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="20dp"
+            android:hint="Hora inicio"
+            android:textColor="#B9151414"
+            android:textColorHint="#464646"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:inputType="time"
+            />
+
+        <EditText
+            android:id="@+id/editTexttiempofinal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:paddingStart="20dp"
+            android:hint="Hora Final"
+            android:textColor="#B9151414"
+            android:textColorHint="#464646"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:inputType="time"
+            />
+
+
+        <EditText
+            android:id="@+id/editTextcantidad"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Cantidad"
+            android:ems="10"
+            android:inputType="number"
             android:paddingStart="20dp"
             android:textColor="#B9151414"
-            android:textColorHint="#464646" />
+            android:textColorHint="#464646"
+
+
+            />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/editTextdescuento"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_background"
+            android:hint="Descuento"
             android:ems="10"
-            android:hint="Email"
-            android:inputType="textPersonName"
+            android:inputType="number"
             android:paddingStart="20dp"
-            android:textColorHint="#464646" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName2"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
+            android:textColor="#B9151414"
             android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPersonName"
-            android:paddingStart="20dp"
-            android:textColorHint="#464646" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Confirmar Contraseña"
-            android:inputType="textPersonName"
-            android:paddingStart="20dp"
-            android:textColorHint="#464646" />
+            android:textColorHint="#464646"/>
 
 
     </LinearLayout>
@@ -100,8 +141,8 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent">
 
         <Button
             android:id="@+id/button"
@@ -138,15 +179,15 @@
 
     <ImageView
         android:id="@+id/imageView11"
-        android:layout_width="179dp"
-        android:layout_height="60dp"
+        android:layout_width="168dp"
+        android:layout_height="42dp"
         android:layout_marginBottom="19dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
+        app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.725"
-        app:srcCompat="@drawable/registro" />
+        app:layout_constraintVertical_bias="0.659"
+        app:srcCompat="@drawable/nuevobono" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

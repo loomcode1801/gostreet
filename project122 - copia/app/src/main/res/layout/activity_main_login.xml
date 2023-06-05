@@ -146,11 +146,11 @@
 
         <ImageView
             android:id="@+id/imageView17"
-            android:layout_width="336dp"
-            android:layout_height="318dp"
-            app:srcCompat="@drawable/d47d7a13_d1d9_4a4d_bc72_00effccc0771"
-            tools:layout_editor_absoluteX="63dp"
-            tools:layout_editor_absoluteY="16dp" />
+            android:layout_width="231dp"
+            android:layout_height="208dp"
+            app:srcCompat="@drawable/fd8db93c_55ad_49b9_a202_905a87d03f94_removebg_preview"
+            tools:layout_editor_absoluteX="90dp"
+            tools:layout_editor_absoluteY="93dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
