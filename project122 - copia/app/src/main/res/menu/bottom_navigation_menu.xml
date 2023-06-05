@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/inicio"
+        android:title="Inicio"
+        android:icon="@drawable/ic_inicio" />
+
+    <item
+        android:id="@+id/perfil"
+        android:title="Perfil"
+        android:icon="@drawable/ic_perfil" />
+
+    <item
+        android:id="@+id/carrito"
+        android:title="Carrito"
+        android:icon="@drawable/ic_carrito" />
+</menu>

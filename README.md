@@ -1,2 +1,2 @@
 # gostreet
-Project made in Kotlin.
+Project made in Java.
