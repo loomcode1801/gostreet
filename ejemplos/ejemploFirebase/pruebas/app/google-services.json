@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "550577147544",
+    "project_id": "billeteravirtual-544f6",
+    "storage_bucket": "billeteravirtual-544f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550577147544:android:97849b9eb39efc9b938aed",
+        "android_client_info": {
+          "package_name": "com.example.pruebas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550577147544-tnjs4n7nvdgf8v2e9a38uscr1q7ltihl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDW_5VF2DQGJj_HDcwGxAWzLtBfy1HxzFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550577147544-tnjs4n7nvdgf8v2e9a38uscr1q7ltihl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
