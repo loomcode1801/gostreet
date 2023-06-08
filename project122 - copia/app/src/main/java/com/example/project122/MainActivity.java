@@ -28,10 +28,11 @@ public class MainActivity extends AppCompatActivity {
         viewPager2 = findViewById(R.id.viewPagerImageSlider);
 
         List<SliderItem> sliderItems = new ArrayList<>();
-        sliderItems.add(new SliderItem(R.drawable.frame));
-        sliderItems.add(new SliderItem(R.drawable.frame2));
-        sliderItems.add(new SliderItem(R.drawable.frame3));
-        sliderItems.add(new SliderItem(R.drawable.frame4));
+        sliderItems.add(new SliderItem(R.drawable.img1));
+        sliderItems.add(new SliderItem(R.drawable.img2));
+        sliderItems.add(new SliderItem(R.drawable.img5));
+        sliderItems.add(new SliderItem(R.drawable.img3));
+        sliderItems.add(new SliderItem(R.drawable.img4));
 
     viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2));
 
