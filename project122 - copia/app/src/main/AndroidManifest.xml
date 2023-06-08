@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Project122">
         <activity
+            android:name=".Activity_seccionbono"
+            android:exported="false" />
+        <activity
             android:name=".Activity_crearbono"
             android:exported="false" />
         <activity
