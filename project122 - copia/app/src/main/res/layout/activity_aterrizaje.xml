@@ -31,7 +31,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/startbtn"
+            android:id="@+id/botttom_sheet"
             android:layout_width="228dp"
             android:layout_height="54dp"
             android:layout_gravity="center|center_vertical"
@@ -46,7 +46,7 @@
             app:layout_constraintVertical_bias="0.342">
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/bott"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center|top"
@@ -95,7 +95,7 @@
         android:outAnimation="@android:anim/slide_out_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.709"
+        app:layout_constraintHorizontal_bias="0.7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.806">
