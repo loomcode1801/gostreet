@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
     public void navegar (View view){
-    Intent miIntent =new Intent(MainActivity.this,Activity_Registro.class);
+    Intent miIntent =new Intent(MainActivity.this,Activity_home.class);
     startActivity(miIntent);
     }
 
