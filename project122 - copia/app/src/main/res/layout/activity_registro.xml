@@ -62,7 +62,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/txtClienteEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -77,7 +77,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/txtClientePassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -92,7 +92,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/txtClientePasswConf"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"

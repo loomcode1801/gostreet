@@ -23,7 +23,7 @@ import clases.Cliente;
 public class Activity_Registro extends AppCompatActivity {
 
     //variables
-    private EditText txtClienteID, txtClienteNom;
+    private EditText txtClienteID, txtClienteNom, txtClienteEmail, txtClientePassword;
 
     private Button btnRegClient;
 
@@ -36,6 +36,9 @@ public class Activity_Registro extends AppCompatActivity {
 
         txtClienteID   = (EditText) findViewById(R.id.txtClienteID);
         txtClienteNom  = (EditText) findViewById(R.id.txtClienteNom);
+        txtClienteEmail  = (EditText) findViewById(R.id.txtClienteEmail);
+        txtClientePassword  = (EditText) findViewById(R.id.txtClientePassword);
+
         btnRegClient  = (Button)   findViewById(R.id.btnRegClient);
 
         botonRegistrar();
@@ -50,7 +53,9 @@ public class Activity_Registro extends AppCompatActivity {
 
                 // validacion de ID y nombre en el input
                 if (txtClienteID.getText().toString().trim().isEmpty() //si id o nombre esta vacio Error
-                        || txtClienteNom.getText().toString().trim().isEmpty()){
+                        || txtClienteNom.getText().toString().trim().isEmpty()
+                        || txtClienteEmail.getText().toString().trim().isEmpty()
+                        || txtClientePassword.getText().toString().trim().isEmpty()){
 
                     ocultarTeclado();
                     Toast.makeText(Activity_Registro.this, "Complete los campos faltantes!!", Toast.LENGTH_SHORT).show();
@@ -59,7 +64,8 @@ public class Activity_Registro extends AppCompatActivity {
 
                     int id = Integer.parseInt(txtClienteID.getText().toString()); // ← ← se convierte la id de string a int
                     String nom = txtClienteNom.getText().toString(); //← ← ← se captura el texto del luchador ← ← ←
-
+                    String email = txtClienteEmail.getText().toString();
+                    String passw = txtClientePassword.getText().toString();
 
 
                     //FIREBASE
@@ -73,12 +79,14 @@ public class Activity_Registro extends AppCompatActivity {
                         @Override         // snapshot hace referencia al contenido de la base de datos
                         public void onDataChange(@NonNull DataSnapshot snapshot) { //aqui adentro se define que quieres hacer
 
-                            Cliente luc = new Cliente(id, nom); //clase hijo del constructor
+                            Cliente luc = new Cliente(id, nom, email, passw); //clase hijo del constructor
                             dbref.push().setValue(luc); // aqui se hace el insert osea enviar info a la base de datos
                             ocultarTeclado();
                             Toast.makeText(Activity_Registro.this, "Luchador registrado correctamente", Toast.LENGTH_SHORT).show();
                             txtClienteID.setText("");
                             txtClienteNom.setText("");
+                            txtClienteEmail.setText("");
+                            txtClientePassword.setText("");
                         }
 
                         @Override

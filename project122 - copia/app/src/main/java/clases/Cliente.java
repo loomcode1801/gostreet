@@ -5,16 +5,19 @@ import android.os.Parcelable;
 
 public class Cliente implements Parcelable {
     private int id;
-    private String nombre;
+    private String nombre, Email, password;
+
 
     public Cliente() {
     }
 
 
     // clic derecho → constructor → "id" y "nombre"
-    public Cliente(int id, String nombre) {
+    public Cliente(int id, String nombre, String Email, String password) {
         this.id = id;
         this.nombre = nombre;
+        this.Email = Email;
+        this.password = password;
     }
     // clic derecho → constructor → "id" y "nombre"
 
@@ -22,7 +25,8 @@ public class Cliente implements Parcelable {
 
 
 
-    // clic clic derecho → getter and setter → selecciona id y nombre
+    // clic clic derecho → getter and setter → selecciona id, nombre Email
+
     public int getId() {
         return id;
     }
@@ -38,7 +42,25 @@ public class Cliente implements Parcelable {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    // clic clic derecho → getter and setter → selecciona id y nombre
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getpassword() {
+        return password;
+    }
+
+    public void setpassword(String password) {
+        Email = password;
+    }
+
+
+    // clic clic derecho → getter and setter → selecciona id, nombre Email
 
 
 
