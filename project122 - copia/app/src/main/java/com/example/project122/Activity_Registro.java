@@ -115,4 +115,7 @@ public class Activity_Registro extends AppCompatActivity {
         }
     } // Cierra el método ocultarTeclado.
 
+
 }
+
+
