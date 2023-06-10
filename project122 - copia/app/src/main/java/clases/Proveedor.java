@@ -3,8 +3,7 @@ package clases;
 public class Proveedor {
 
     private int id;
-    private String usuario, correo, password, direccion, documento,
-    nit, razonSocial, telefono;
+    private String usuario, correo, password, direccion, documento, razonSocial, telefono;
 
     public Proveedor() {
     }
@@ -12,14 +11,12 @@ public class Proveedor {
 
     //constructor
 
-    public Proveedor(int id, String usuario, String correo, String password, String direccion, String documento, String nit, String razonSocial, String telefono) {
-        this.id = id;
+    public Proveedor(String usuario, String correo, String password, String direccion, String documento, String razonSocial, String telefono) {
         this.usuario = usuario;
         this.correo = correo;
         this.password = password;
         this.direccion = direccion;
         this.documento = documento;
-        this.nit = nit;
         this.razonSocial = razonSocial;
         this.telefono = telefono;
     }
@@ -29,13 +26,7 @@ public class Proveedor {
 
     // clic clic derecho → getter and setter → selecciona id, nombre Email
 
-    public int getId() {
-        return id;
-    }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getUsuario() {
         return usuario;
@@ -77,13 +68,6 @@ public class Proveedor {
         this.documento = documento;
     }
 
-    public String getNit() {
-        return nit;
-    }
-
-    public void setNit(String nit) {
-        this.nit = nit;
-    }
 
     public String getRazonSocial() {
         return razonSocial;
