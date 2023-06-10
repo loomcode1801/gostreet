@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.328">
 
         <EditText
-            android:id="@+id/editTextFinicio2"
+            android:id="@+id/editTextFinicio"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -40,9 +40,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Fecha inicio"
-            android:inputType="number"
-            android:paddingStart="20dp"
+            android:inputType="text"
             android:textColor="#B9151414"
             android:textColorHint="#464646" />
 
@@ -57,7 +55,7 @@
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:hint="Fecha Final"
-            android:inputType="date"
+            android:inputType="text"
             android:paddingStart="20dp"
             android:textColor="#B9151414"
             android:textColorHint="#464646" />
@@ -72,11 +70,8 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Horarios"
-            android:inputType="time"
-            android:paddingStart="20dp"
-            android:textColor="#B9151414"
-            android:textColorHint="#464646" />
+            android:inputType="text"
+            />
 
         <EditText
             android:id="@+id/editTextcodigo"
@@ -192,7 +187,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnRegBonos"
             style="@android:style/Widget.Button"
             android:layout_width="154dp"
             android:layout_height="55dp"
@@ -207,7 +202,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/but"
+            android:id="@+id/sss"
             style="@android:style/Widget.Button"
             android:layout_width="154dp"
             android:layout_height="55dp"

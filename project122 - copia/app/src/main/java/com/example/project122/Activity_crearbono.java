@@ -3,14 +3,12 @@ package com.example.project122;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
@@ -19,88 +17,80 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import clases.Bonos;
 import clases.Cliente;
 
 public class Activity_crearbono extends AppCompatActivity {
 
-    //variables
-    private EditText txtClienteID, txtClienteNom, txtClienteEmail, txtClientePassword;
 
-    private Button btnRegClient;
-
-    private ListView lvDatos;
     private EditText editTextFinicio;
     private EditText editTextfechafinal;
     private EditText editTexttiempoinicio;
-    private EditText editTextcodigo;
     private EditText editTextcantidad;
     private EditText editTextdescuento;
-    private EditText editTextNodescuento;
-    private EditText editTextdescripcion;
+    // private EditText editTextNodescuento;
+    // private EditText editTextdescripcion;
+    //private EditText editTextcodigo;
 
-    @SuppressLint("MissingInflatedId")
+    private Button btnRegBonos;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_registro);
+        setContentView(R.layout.activity_crearbono);
 
         editTextFinicio   = (EditText) findViewById(R.id.editTextFinicio);
-        editTextfechafinal  = (EditText) findViewById(R.id.editTextfechafinal);
-        editTexttiempoinicio  = (EditText) findViewById(R.id.editTexttiempoinicio);
-        editTextcodigo  = (EditText) findViewById(R.id.editTextcodigo);
+        editTextfechafinal   = (EditText) findViewById(R.id.editTextfechafinal);
+        editTexttiempoinicio   = (EditText) findViewById(R.id.editTexttiempoinicio);
         editTextcantidad   = (EditText) findViewById(R.id.editTextcantidad);
-        editTextdescuento  = (EditText) findViewById(R.id.editTextdescuento);
-        editTextNodescuento  = (EditText) findViewById(R.id.editTextNodescuento);
-        editTextdescripcion  = (EditText) findViewById(R.id.editTextdescripcion);
+        editTextdescuento   = (EditText) findViewById(R.id.editTextdescuento);
 
-        btnRegClient  = (Button)   findViewById(R.id.btnRegClient);
+        btnRegBonos  = (Button)   findViewById(R.id.btnRegBonos);
 
-        botonRegistrar();
-    }// cierra el on create
+        botonRegistrarbono();
+    }
 
-
-
-    private void botonRegistrar(){
-        btnRegClient.setOnClickListener(new View.OnClickListener() {
+    private void botonRegistrarbono(){
+        btnRegBonos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
+
                 // validacion de ID y nombre en el input
-                if (txtClienteID.getText().toString().trim().isEmpty() //si id o nombre esta vacio Error
-                        || txtClienteNom.getText().toString().trim().isEmpty()
-                        || txtClienteEmail.getText().toString().trim().isEmpty()
-                        || txtClientePassword.getText().toString().trim().isEmpty()){
+                if (editTextFinicio.getText().toString().trim().isEmpty() //si id o nombre esta vacio Error
+                        || editTextfechafinal.getText().toString().trim().isEmpty()
+                        || editTexttiempoinicio.getText().toString().trim().isEmpty()
+                       ){
 
                     ocultarTeclado();
                     Toast.makeText(Activity_crearbono.this, "Complete los campos faltantes!!", Toast.LENGTH_SHORT).show();
                 }else {
 
 
-                    int id = Integer.parseInt(txtClienteID.getText().toString()); // ← ← se convierte la id de string a int
-                    String nom = txtClienteNom.getText().toString(); //← ← ← se captura el texto del luchador ← ← ←
-                    String email = txtClienteEmail.getText().toString();
-                    String passw = txtClientePassword.getText().toString();
+                    String Finicio = editTextFinicio.getText().toString(); //← ← ← se captura el texto del luchador ← ← ←
+                    String FFin = editTextfechafinal.getText().toString();
+                    String Hinicio = editTexttiempoinicio.getText().toString();
 
 
                     //FIREBASE
                     FirebaseDatabase db = FirebaseDatabase.getInstance(); // ←← conexion a la base de datos
-                    DatabaseReference dbref = db.getReference(clases.Cliente.class.getSimpleName()); // ← referencia que coincide con luchador osea que Luchador sea igual a Luchador
-
+                    DatabaseReference dbref = db.getReference(clases.Bonos.class.getSimpleName()); // ← referencia que coincide con luchador osea que Luchador sea igual a Luchador
 
 
                     //evento de accion de firebase
                     dbref.addListenerForSingleValueEvent(new ValueEventListener() {
-                        @Override         // snapshot hace referencia al contenido de la base de datos
+                        @Override
+                        // snapshot hace referencia al contenido de la base de datos
                         public void onDataChange(@NonNull DataSnapshot snapshot) { //aqui adentro se define que quieres hacer
 
-                            clases.Cliente luc = new Cliente(id, nom, email, passw); //clase hijo del constructor
+                            Bonos luc = new Bonos(Finicio, FFin, Hinicio); //clase hijo del constructor
                             dbref.push().setValue(luc); // aqui se hace el insert osea enviar info a la base de datos
                             ocultarTeclado();
                             Toast.makeText(Activity_crearbono.this, "Luchador registrado correctamente", Toast.LENGTH_SHORT).show();
-                            txtClienteID.setText("");
-                            txtClienteNom.setText("");
-                            txtClienteEmail.setText("");
-                            txtClientePassword.setText("");
+                            editTextFinicio.setText("");
+                            editTextfechafinal.setText("");
+                            editTexttiempoinicio.setText("");
+
                         }
 
                         @Override
@@ -109,7 +99,7 @@ public class Activity_crearbono extends AppCompatActivity {
                         }
                     });
 
-                } // cierra el if/else inicial
+                }
 
             }
         });

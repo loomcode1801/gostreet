@@ -9,7 +9,7 @@
 
 
     <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/txtProveedorUser"
         android:layout_width="382dp"
         android:layout_height="822dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.605">
 
         <EditText
-            android:id="@+id/editTextNombreUsuario2"
+            android:id="@+id/txtProveedorUser"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -46,7 +46,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextNombremarca"
+            android:id="@+id/txtRazonSocial"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -62,7 +62,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTexTdocumento"
+            android:id="@+id/txtDocumento"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -77,7 +77,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTexTelefono3"
+            android:id="@+id/txtTelefono"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -92,7 +92,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextNumero2"
+            android:id="@+id/txtProveedorEmail"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -107,7 +107,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTexContraseña"
+            android:id="@+id/txtProveedorPassword"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -137,7 +137,7 @@
             android:textColorHint="#464646" />
 
         <EditText
-            android:id="@+id/editTextdireccion"
+            android:id="@+id/txtDireccion"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -174,13 +174,13 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/btn_red"
-            android:text="Regresar"
+            android:text="Cancelar"
             android:textColor="#ffffff"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/but"
+            android:id="@+id/btnRegProveedor"
             style="@android:style/Widget.Button"
             android:layout_width="154dp"
             android:layout_height="55dp"
