@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.638">
 
         <EditText
-            android:id="@+id/editTextfechainicio"
+            android:id="@+id/editTextFinicio"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -41,7 +41,7 @@
             android:paddingStart="20dp"
             android:hint="Fecha Inicio"
             android:ems="10"
-            android:inputType="date"
+            android:inputType="text"
             android:textColor="#B9151414"
             android:textColorHint="#464646"/>
 
@@ -54,12 +54,12 @@
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
-            android:paddingStart="20dp"
-            android:hint="Fecha Final"
             android:ems="10"
-            android:inputType="date"
+            android:hint="Fecha Final"
+            android:inputType="text"
+            android:paddingStart="20dp"
             android:textColor="#B9151414"
-            android:textColorHint="#464646"/>
+            android:textColorHint="#464646" />
 
         <EditText
             android:id="@+id/editTexttiempoinicio"
@@ -75,7 +75,7 @@
             android:textColorHint="#464646"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:inputType="time"
+            android:inputType="text"
             />
 
         <EditText
@@ -145,7 +145,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnRegBonos"
             style="@android:style/Widget.Button"
             android:layout_width="154dp"
             android:layout_height="55dp"
@@ -160,7 +160,7 @@
             android:textStyle="bold" />
 
         <Button
-            android:id="@+id/but"
+            android:id="@+id/sss"
             style="@android:style/Widget.Button"
             android:layout_width="154dp"
             android:layout_height="55dp"
