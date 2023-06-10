@@ -15,12 +15,15 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 public class Activity_Aterrizaje extends AppCompatActivity {
-    private ConstraintLayout bottomsheet;
+    private ConstraintLayout bottomsheet ;
+    private ConstraintLayout bottomsheet2 ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_aterrizaje);
         bottomsheet = findViewById(R.id.botttom_sheet);
+        bottomsheet2 = findViewById(R.id.botttom_sheet2);
         bottomsheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,7 +33,18 @@ public class Activity_Aterrizaje extends AppCompatActivity {
             }
         });
 
+        bottomsheet2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showDialog();
+
+            }
+        });
+
     }
+
+
 
     private void showDialog() {
 
@@ -68,4 +82,5 @@ public class Activity_Aterrizaje extends AppCompatActivity {
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
+
 }
