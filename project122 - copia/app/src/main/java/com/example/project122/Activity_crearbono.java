@@ -26,11 +26,18 @@ public class Activity_crearbono extends AppCompatActivity {
     private EditText editTextFinicio;
     private EditText editTextfechafinal;
     private EditText editTexttiempoinicio;
-    private EditText editTextcantidad;
-    private EditText editTextdescuento;
-    // private EditText editTextNodescuento;
-    // private EditText editTextdescripcion;
-    //private EditText editTextcodigo;
+
+    private EditText editTextTiempofinal;
+
+    private EditText editTextCantidad;
+
+    private EditText editTextDescuento;
+
+    private EditText editTextPrecio;
+
+
+    private EditText editTextdescripcion;
+
 
     private Button btnRegBonos;
 
@@ -42,8 +49,12 @@ public class Activity_crearbono extends AppCompatActivity {
         editTextFinicio   = (EditText) findViewById(R.id.editTextFinicio);
         editTextfechafinal   = (EditText) findViewById(R.id.editTextfechafinal);
         editTexttiempoinicio   = (EditText) findViewById(R.id.editTexttiempoinicio);
-        editTextcantidad   = (EditText) findViewById(R.id.editTextcantidad);
-        editTextdescuento   = (EditText) findViewById(R.id.editTextdescuento);
+
+        editTextTiempofinal   = (EditText) findViewById(R.id.editTextTiempofinal);
+        editTextCantidad   = (EditText) findViewById(R.id.editTextCantidad);
+        editTextDescuento   = (EditText) findViewById(R.id.editTextDescuento);
+        editTextPrecio   = (EditText) findViewById(R.id.editTextPrecio);
+        editTextdescripcion   = (EditText) findViewById(R.id.editTextdescripcion);
 
         btnRegBonos  = (Button)   findViewById(R.id.btnRegBonos);
 
@@ -58,8 +69,7 @@ public class Activity_crearbono extends AppCompatActivity {
 
                 // validacion de ID y nombre en el input
                 if (editTextFinicio.getText().toString().trim().isEmpty() //si id o nombre esta vacio Error
-                        || editTextfechafinal.getText().toString().trim().isEmpty()
-                        || editTexttiempoinicio.getText().toString().trim().isEmpty()
+
                        ){
 
                     ocultarTeclado();
@@ -70,6 +80,16 @@ public class Activity_crearbono extends AppCompatActivity {
                     String Finicio = editTextFinicio.getText().toString(); //← ← ← se captura el texto del luchador ← ← ←
                     String FFin = editTextfechafinal.getText().toString();
                     String Hinicio = editTexttiempoinicio.getText().toString();
+                    String Hfinal = editTextTiempofinal.getText().toString();
+
+                    int canti = Integer.parseInt(editTextCantidad.getText().toString());
+                    int descuen = Integer.parseInt(editTextDescuento.getText().toString());
+                    int prec = Integer.parseInt(editTextPrecio.getText().toString());
+
+                    String descrip = editTextdescripcion.getText().toString();
+
+
+
 
 
                     //FIREBASE
@@ -83,13 +103,23 @@ public class Activity_crearbono extends AppCompatActivity {
                         // snapshot hace referencia al contenido de la base de datos
                         public void onDataChange(@NonNull DataSnapshot snapshot) { //aqui adentro se define que quieres hacer
 
-                            Bonos luc = new Bonos(Finicio, FFin, Hinicio); //clase hijo del constructor
+                            Bonos luc = new Bonos(Finicio, FFin,Hinicio,Hfinal, canti, descuen, prec, descrip  /*, descuen, prec, , , Hinicio, Hfinal,  descrip*/); //clase hijo del constructor
                             dbref.push().setValue(luc); // aqui se hace el insert osea enviar info a la base de datos
                             ocultarTeclado();
                             Toast.makeText(Activity_crearbono.this, "Luchador registrado correctamente", Toast.LENGTH_SHORT).show();
+
+
                             editTextFinicio.setText("");
                             editTextfechafinal.setText("");
                             editTexttiempoinicio.setText("");
+
+                            editTextTiempofinal.setText("");
+                            editTextCantidad.setText("");
+                            editTextDescuento.setText("");
+                            editTextPrecio.setText("");
+                            editTextdescripcion.setText("");
+
+
 
                         }
 

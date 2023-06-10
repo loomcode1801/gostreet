@@ -40,6 +40,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
+            android:hint="Fecha de inicio"
             android:inputType="text"
             android:textColor="#B9151414"
             android:textColorHint="#464646" />
@@ -54,7 +55,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="Fecha Final"
+            android:hint="Fecha de final"
             android:inputType="text"
             android:paddingStart="20dp"
             android:textColor="#B9151414"
@@ -68,13 +69,14 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
+            android:hint="Hora de inicio"
             android:background="@drawable/edittext_background"
             android:ems="10"
             android:inputType="text"
             />
 
         <EditText
-            android:id="@+id/editTextcodigo"
+            android:id="@+id/editTextTiempofinal"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -83,15 +85,15 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:hint="codigo"
-            android:inputType="time"
+            android:hint="Hora final"
+            android:inputType="text"
             android:paddingStart="20dp"
             android:textColor="#B9151414"
             android:textColorHint="#464646" />
 
 
         <EditText
-            android:id="@+id/editTextcantidad"
+            android:id="@+id/editTextCantidad"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -110,7 +112,7 @@
             />
 
         <EditText
-            android:id="@+id/editTextdescuento"
+            android:id="@+id/editTextDescuento"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -125,24 +127,10 @@
             android:textColor="#B9151414"
             android:textColorHint="#464646" />
 
-        <EditText
-            android:id="@+id/editTextNodescuento"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/edittext_background"
-            android:ems="10"
-            android:hint="Sin descuento"
-            android:inputType="number"
-            android:paddingStart="20dp"
-            android:textColor="#B9151414"
-            android:textColorHint="#464646" />
+
 
         <EditText
-            android:id="@+id/editTextFinicio"
+            android:id="@+id/editTextPrecio"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
