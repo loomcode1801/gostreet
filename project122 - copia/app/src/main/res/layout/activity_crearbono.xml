@@ -20,18 +20,18 @@
 
     <LinearLayout
         android:id="@+id/linearLayout4"
-        android:layout_width="388dp"
-        android:layout_height="530dp"
+        android:layout_width="390dp"
+        android:layout_height="587dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
+        app:layout_constraintHorizontal_bias="0.304"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398">
+        app:layout_constraintVertical_bias="0.328">
 
         <EditText
-            android:id="@+id/editTextFinicio"
+            android:id="@+id/editTextFinicio2"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginStart="32dp"
@@ -147,6 +147,22 @@
             android:textColorHint="#464646" />
 
         <EditText
+            android:id="@+id/editTextFinicio"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/edittext_background"
+            android:ems="10"
+            android:hint="Precio"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:textColor="#B9151414"
+            android:textColorHint="#464646" />
+
+        <EditText
             android:id="@+id/editTextdescripcion"
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -167,12 +183,12 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="422dp"
-        android:layout_height="122dp"
+        android:layout_width="424dp"
+        android:layout_height="86dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -215,10 +231,10 @@
         android:layout_marginBottom="19dp"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.176"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/nuevobono" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
