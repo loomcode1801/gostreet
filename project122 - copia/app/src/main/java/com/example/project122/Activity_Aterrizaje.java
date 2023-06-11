@@ -1,86 +1,76 @@
 package com.example.project122;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.CompositePageTransformer;
+import androidx.viewpager2.widget.MarginPageTransformer;
+import androidx.viewpager2.widget.ViewPager2;
 
-import android.app.Dialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.os.Handler;
 import android.view.View;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.widget.LinearLayout;
-import android.widget.Toast;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Activity_Aterrizaje extends AppCompatActivity {
-    private ConstraintLayout bottomsheet ;
-    private ConstraintLayout bottomsheet2 ;
+
+    private ViewPager2 viewPager2;
+    private Handler sliderHandler= new Handler();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aterrizaje);
-        bottomsheet = findViewById(R.id.botttom_sheet);
-        bottomsheet2 = findViewById(R.id.botttom_sheet2);
-        bottomsheet.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_main);
+
+        viewPager2 = findViewById(R.id.viewPagerImageSlider);
+
+        List<SliderItem> sliderItems = new ArrayList<>();
+        sliderItems.add(new SliderItem(R.drawable.img1));
+        sliderItems.add(new SliderItem(R.drawable.img2));
+        sliderItems.add(new SliderItem(R.drawable.img5));
+        sliderItems.add(new SliderItem(R.drawable.img3));
+        sliderItems.add(new SliderItem(R.drawable.img4));
+
+        viewPager2.setAdapter(new SliderAdapter(sliderItems,viewPager2));
+
+        viewPager2.setClipToPadding(false);
+        viewPager2.setClipChildren(false);
+        viewPager2.setOffscreenPageLimit(3);
+        viewPager2.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(40));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
             @Override
-            public void onClick(View v) {
-
-                showDialog();
-
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+                page.setScaleY(0.85f + r * 0.15f);
             }
         });
+        viewPager2.setPageTransformer(compositePageTransformer);
 
-        bottomsheet2.setOnClickListener(new View.OnClickListener() {
+        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
-            public void onClick(View v) {
-
-                showDialog();
-
+            public void onPageSelected(int position) {
+                super.onPageSelected(position);
+                sliderHandler.removeCallbacks(sliderRunnable);
+                sliderHandler.postDelayed(sliderRunnable,3000);
             }
         });
-
     }
+    private Runnable sliderRunnable = new Runnable() {
+        @Override
+        public void run() {
+            viewPager2.setCurrentItem(viewPager2.getCurrentItem() + 1);
 
-
-
-    private void showDialog() {
-
-        final Dialog dialog = new Dialog(this);
-        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        dialog.setContentView(R.layout.bottomsheetlayout);
-
-        LinearLayout editLayout = dialog.findViewById(R.id.layoutEdit);
-        LinearLayout shareLayout = dialog.findViewById(R.id.layoutShare);
-
-        editLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-                Toast.makeText(Activity_Aterrizaje.this,"Usuario seleccionado",Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-        shareLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                dialog.dismiss();
-                Toast.makeText(Activity_Aterrizaje.this,"Proveedor seleccionado",Toast.LENGTH_SHORT).show();
-
-            }
-        });
-
-
-        dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-        dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
-        dialog.getWindow().setGravity(Gravity.BOTTOM);
+        }
+    };
+    public void navegar (View view){
+        Intent miIntent =new Intent(Activity_Aterrizaje.this,Activity_crearbono.class);
+        startActivity(miIntent);
     }
 
 }
