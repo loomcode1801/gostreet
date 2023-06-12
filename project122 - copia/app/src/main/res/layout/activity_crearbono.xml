@@ -25,10 +25,10 @@
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.328">
+        app:layout_constraintVertical_bias="0.597">
 
         <EditText
             android:id="@+id/editTextFinicio"
@@ -40,6 +40,7 @@
             android:layout_marginBottom="8dp"
             android:background="@drawable/edittext_background"
             android:ems="10"
+            android:paddingStart="20dp"
             android:hint="Fecha de inicio"
             android:inputType="text"
             android:textColor="#B9151414"
@@ -69,11 +70,11 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
             android:layout_marginBottom="8dp"
-            android:hint="Hora de inicio"
             android:background="@drawable/edittext_background"
             android:ems="10"
-            android:inputType="text"
-            />
+            android:paddingStart="20dp"
+            android:hint="Hora de inicio"
+            android:inputType="text" />
 
         <EditText
             android:id="@+id/editTextTiempofinal"
@@ -126,7 +127,6 @@
             android:paddingStart="20dp"
             android:textColor="#B9151414"
             android:textColorHint="#464646" />
-
 
 
         <EditText
@@ -217,7 +217,7 @@
         app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_bias="0.64"
         app:srcCompat="@drawable/nuevobono" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

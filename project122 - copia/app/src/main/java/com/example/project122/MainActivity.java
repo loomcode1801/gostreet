@@ -12,6 +12,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 import android.widget.TextView;
@@ -21,8 +22,6 @@ public class MainActivity extends AppCompatActivity {
     private ConstraintLayout bottomsheet ;
     private ConstraintLayout bottomsheet2 ;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,77 +29,77 @@ public class MainActivity extends AppCompatActivity {
         bottomsheet = findViewById(R.id.botttom_sheet);
         bottomsheet2 = findViewById(R.id.botttom_sheet2);
 
-
-
-
         bottomsheet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                showDialog();
-
+                showDialog(true);
             }
         });
 
         bottomsheet2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                showDialog();
-
+                showDialog(false);
             }
         });
-
-
-
     }
 
-
-
-    private void showDialog() {
-
+    private void showDialog(boolean isBottomSheet1) {
         final Dialog dialog = new Dialog(this);
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         dialog.setContentView(R.layout.bottomsheetlayout);
 
-        LinearLayout editLayout = dialog.findViewById(R.id.layoutEdit);
-        LinearLayout shareLayout = dialog.findViewById(R.id.layoutShare);
+        Button clienteButton = dialog.findViewById(R.id.clip_cliente);
+        Button proveedorButton = dialog.findViewById(R.id.clip_Proveeedor);
 
-        editLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if (isBottomSheet1) {
+            clienteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Cliente seleccionado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, Main_Login.class);
+                    startActivity(intent);
+                }
+            });
 
-                dialog.dismiss();
-                Toast.makeText(MainActivity.this,"Usuario seleccionado",Toast.LENGTH_SHORT).show();
+            proveedorButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Proveedor seleccionado", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, Main_Login.class);
+                    startActivity(intent);
+                }
+            });
+        } else {
+            clienteButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Cliente seleccionado", Toast.LENGTH_SHORT).show();
 
-            }
-        });
+                    Intent intent = new Intent(MainActivity.this, Activity_Registro.class);
+                    startActivity(intent);
+                }
+            });
 
-        shareLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            proveedorButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Proveedor seleccionado", Toast.LENGTH_SHORT).show();
 
-                dialog.dismiss();
-                Toast.makeText(MainActivity.this,"Proveedor seleccionado",Toast.LENGTH_SHORT).show();
-
-
-
-            }
-        });
-
+                    Intent intent = new Intent(MainActivity.this, RegistroProveedor_Activity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
         dialog.show();
-        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT);
+        dialog.getWindow().setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
-
-
     }
-
-
-
-
 }
-
-

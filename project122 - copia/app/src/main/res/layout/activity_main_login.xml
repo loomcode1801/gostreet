@@ -27,9 +27,11 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="120dp"
             android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView17">
 
@@ -148,9 +150,14 @@
             android:id="@+id/imageView17"
             android:layout_width="231dp"
             android:layout_height="208dp"
-            app:srcCompat="@drawable/fd8db93c_55ad_49b9_a202_905a87d03f94_removebg_preview"
-            tools:layout_editor_absoluteX="90dp"
-            tools:layout_editor_absoluteY="93dp" />
+            android:layout_marginStart="1dp"
+            android:layout_marginTop="93dp"
+            android:layout_marginEnd="90dp"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imageView16"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/fd8db93c_55ad_49b9_a202_905a87d03f94_removebg_preview" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
