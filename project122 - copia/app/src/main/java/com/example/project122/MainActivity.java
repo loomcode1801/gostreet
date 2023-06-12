@@ -13,9 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.LinearLayout;
 import android.widget.Toast;
-import android.widget.TextView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -78,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     dialog.dismiss();
                     Toast.makeText(MainActivity.this, "Cliente seleccionado", Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(MainActivity.this, Activity_Registro.class);
                     startActivity(intent);
                 }

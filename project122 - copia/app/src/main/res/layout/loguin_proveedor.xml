@@ -110,7 +110,7 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/secbonos"
+                android:id="@+id/buttonLoguinP"
                 style="@android:style/Widget.Button"
                 android:layout_width="192dp"
                 android:layout_height="wrap_content"
