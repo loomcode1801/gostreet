@@ -33,11 +33,15 @@ public class Luchador implements Parcelable {
     }
 
 
+
+
+
     @Override
     public String toString() {
-        return "Luchador{" +
-                "nombre='" + nombre + '\'' +
-                '}';
+
+        return id + " Luchador: " + nombre  ;
+
+
     }
 
 

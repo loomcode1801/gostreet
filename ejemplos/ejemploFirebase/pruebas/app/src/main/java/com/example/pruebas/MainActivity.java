@@ -1,10 +1,12 @@
 package com.example.pruebas;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -14,17 +16,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.Toast;
 
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -50,6 +56,8 @@ public class MainActivity extends AppCompatActivity {
         botonModificar();
         botonRegistrar();
         botonEliminar();
+
+        listarLuchadores();
 
     }// cierra el on create
 
@@ -96,12 +104,40 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) { //aqui adentro se define que quieres hacer
 
-                            Luchador luc = new Luchador(id, nom); //clase hijo del constructor
-                            dbref.push().setValue(luc); // aqui se hace el insert osea enviar info a la base de datos
-                            ocultarTeclado();
-                            Toast.makeText(MainActivity.this, "Luchador registrado correctamente", Toast.LENGTH_SHORT).show();
-                            txtid.setText("");
-                            txtnom.setText("");
+
+                            String aux = Integer.toString(id); // convierte el id a un String
+                            boolean res = false;
+                            for (DataSnapshot x : snapshot.getChildren()){
+                                if (x.child("id").getValue().toString().equalsIgnoreCase(aux)){
+                                    res = true;
+                                    ocultarTeclado();
+                                    Toast.makeText(MainActivity.this, "Error el id ("+aux+") ya existe", Toast.LENGTH_SHORT).show();
+                                    break;
+                                }
+                            }
+
+                            boolean res2 = false;
+                            for (DataSnapshot x : snapshot.getChildren()){
+                                if (x.child("nombre").getValue().toString().equalsIgnoreCase(nom)){
+                                    res2 = true;
+                                    ocultarTeclado();
+                                    Toast.makeText(MainActivity.this, "Error el nombre ya existe", Toast.LENGTH_SHORT).show();
+                                    break;
+                                }
+                            }
+
+
+
+                            if (res == false && res2 == false){
+                                Luchador luc = new Luchador(id, nom); //clase hijo del constructor
+                                dbref.push().setValue(luc); // aqui se hace el insert osea enviar info a la base de datos
+                                ocultarTeclado();
+                                Toast.makeText(MainActivity.this, "Luchador registrado correctamente", Toast.LENGTH_SHORT).show();
+                                txtid.setText("");
+                                txtnom.setText("");
+                            }
+
+
                         }
 
                         @Override
@@ -116,7 +152,44 @@ public class MainActivity extends AppCompatActivity {
         });
     }// cierra el metodo boton registrar
 
+    private void listarLuchadores(){
+        FirebaseDatabase db = FirebaseDatabase.getInstance();
+        DatabaseReference dbref = db.getReference(Luchador.class.getSimpleName());
 
+        ArrayList <Luchador> lisluc = new ArrayList<Luchador> ();
+        ArrayAdapter <Luchador> ada = new ArrayAdapter<Luchador>(MainActivity.this, android.R.layout.simple_list_item_1, lisluc);
+        lvDatos.setAdapter(ada);
+
+        dbref.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Luchador luc = snapshot.getValue(Luchador.class);
+                lisluc.add(luc);
+                ada.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                ada.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }// cierra el metodo listarLuchadores
 
 
 
@@ -137,6 +210,19 @@ public class MainActivity extends AppCompatActivity {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     } // Cierra el método ocultarTeclado.
+
+
+    public void navegar (View view){
+        Intent miIntent =new Intent(MainActivity.this,ejemplo2.class);
+        startActivity(miIntent);
+    }
+
+    public void pantalla2 (View view){
+        Intent miIntent =new Intent(MainActivity.this,userList.class);
+        startActivity(miIntent);
+    }
+
+
 
 
 } // cierra la clase
