@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
@@ -16,43 +17,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <Button
+            android:id="@+id/buttonrecicle"
+            style="@android:style/Widget.Button"
+            android:layout_width="120dp"
+            android:layout_height="32dp"
+            android:layout_gravity="right"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="26dp"
+            android:layout_marginEnd="255dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/appointment_btn_background"
+            android:gravity="center"
+            android:text="Volver"
+            android:textColor="#F4EFEF"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="12dp"
             android:text="Mis Bonos"
             android:textAlignment="center"
             android:textColor="#E6DEDE"
             android:textSize="20sp"
             android:textStyle="bold" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/BonosList"
             android:layout_width="410dp"
-            android:layout_height="202dp"
+            android:layout_height="604dp"
             tools:layout_editor_absoluteX="1dp" />
 
     </LinearLayout>
-    <Button
-        android:id="@+id/buttonrecicle"
-        style="@android:style/Widget.Button"
-        android:layout_width="140dp"
-        android:layout_height="36dp"
-        android:layout_gravity="right"
-        android:layout_marginTop="304dp"
-        android:background="@drawable/appointment_btn_background"
-        android:gravity="center"
-        android:text="Button"
-        android:textColor="#F4EFEF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
