@@ -59,10 +59,10 @@
                         android:layout_marginBottom="24dp"
                         android:background="@drawable/appointment_btn_background"
                         android:gravity="center"
+                        android:onClick="navegar"
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:text="Ver Detalles"
-                        android:onClick="navegar"
                         android:textColor="#ffffff"
                         android:textSize="10sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -97,7 +97,7 @@
                         app:layout_constraintVertical_bias="0.0" />
 
                     <TextView
-                        android:id="@+id/txtserviciodeempresa"
+                        android:id="@+id/tvDescripcion"
                         android:layout_width="wrap_content"
                         android:layout_height="21dp"
                         android:layout_marginStart="8dp"
@@ -116,27 +116,21 @@
                         android:layout_marginEnd="7dp"
                         app:layout_constraintBottom_toBottomOf="@+id/imagenempresa1"
                         app:layout_constraintEnd_toStartOf="@+id/txthorario"
+                        app:layout_constraintHorizontal_bias="0.69"
                         app:layout_constraintStart_toStartOf="@+id/txtserviciodeempresa"
                         app:layout_constraintTop_toBottomOf="@+id/txtserviciodeempresa"
                         app:srcCompat="@android:drawable/ic_menu_mylocation" />
 
                     <TextView
-                        android:id="@+id/txthorario"
+                        android:id="@+id/tvfechaInicio"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginBottom="26dp"
                         android:text="09:25 AM- 13:30 PM"
                         android:textColor="#000000"
                         android:textSize="12sp"
                         android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/btnverdetalle1"
-                        app:layout_constraintStart_toEndOf="@+id/imagenubiacionempresa"
-                        app:layout_constraintTop_toTopOf="@+id/imagenubiacionempresa"
-                        app:layout_constraintVertical_bias="0.0" />
+                        tools:layout_editor_absoluteX="142dp"
+                        tools:layout_editor_absoluteY="68dp" />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
