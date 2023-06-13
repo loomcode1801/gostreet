@@ -17,6 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
         <Button
             android:id="@+id/buttonrecicle"
             style="@android:style/Widget.Button"
@@ -31,8 +32,7 @@
             android:gravity="center"
             android:text="Volver"
             android:textColor="#F4EFEF"
-            android:textSize="20sp"
-             />
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/textView12"
