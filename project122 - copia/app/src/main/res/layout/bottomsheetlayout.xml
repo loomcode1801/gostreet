@@ -34,7 +34,7 @@
             android:text="Cliente"
             android:textColor="#F4EFEF"
             android:textSize="24sp"
-            android:textStyle="bold" />
+             />
 
     </LinearLayout>
 
@@ -65,8 +65,7 @@
             android:onClick="Ir_a_Registro_Proveedor"
             android:text="Proveedor"
             android:textColor="#F4EFEF"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textSize="24sp" />
     </LinearLayout>
 
 
