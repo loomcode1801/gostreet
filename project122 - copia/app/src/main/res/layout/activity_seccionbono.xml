@@ -28,6 +28,7 @@
             android:layout_marginTop="26dp"
             android:layout_marginEnd="255dp"
             android:layout_marginBottom="10dp"
+            android:onClick="VolHomeProveedor"
             android:background="@drawable/appointment_btn_background"
             android:gravity="center"
             android:text="Volver"

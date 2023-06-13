@@ -35,8 +35,11 @@ public class AdapterBonos extends RecyclerView.Adapter<AdapterBonos.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
 
         Bonos bonos = list.get(position);
-        holder.fechaInicio.setText(bonos.getFechaInicio());
         holder.descripcion.setText(bonos.getDescripcion());
+        holder.fechaInicio.setText(bonos.getFechaInicio() + " - " + bonos.getFechaFinal());
+        holder.horaInicio.setText(bonos.getHoraInicio() + " - " + bonos.getHoraFin());
+        holder.descuento.setText(String.valueOf(bonos.getDescuento() + "%"));
+
 
     }
 
@@ -52,8 +55,12 @@ public class AdapterBonos extends RecyclerView.Adapter<AdapterBonos.MyViewHolder
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            fechaInicio = itemView.findViewById(R.id.tvfechaInicio);
-            descripcion = itemView.findViewById(R.id.tvDescripcion);
+            descripcion = itemView.findViewById(R.id.tvDescripcionBono);
+            fechaInicio = itemView.findViewById(R.id.tvDescripcion);
+            horaInicio = itemView.findViewById(R.id.tvfechaInicio);
+            descuento = itemView.findViewById(R.id.tvDescuento);
+
+
 
         }
 

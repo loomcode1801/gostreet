@@ -182,6 +182,7 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="32dp"
+            android:onClick="volHomeProveedor2"
             android:layout_marginBottom="8dp"
             android:background="@drawable/btn_red"
             android:text="Regresar"

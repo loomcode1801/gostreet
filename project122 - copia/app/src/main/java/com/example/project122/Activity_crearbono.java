@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -148,5 +149,12 @@ public class Activity_crearbono extends AppCompatActivity {
             imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     } // Cierra el método ocultarTeclado.
+
+
+    public void volHomeProveedor2 (View v) {
+
+        Intent intent = new Intent(Activity_crearbono.this, Activity_home.class);
+        startActivity(intent);
+    }
 
 }
