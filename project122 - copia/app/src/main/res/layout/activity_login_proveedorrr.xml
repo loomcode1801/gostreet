@@ -110,14 +110,14 @@
             </LinearLayout>
 
             <Button
-                android:id="@+id/secbonos"
+                android:id="@+id/buttonLoguinP"
                 style="@android:style/Widget.Button"
                 android:layout_width="192dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:onClick="seccionBonos"
+                android:onClick="HomeProveedor"
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/btn_red"
@@ -134,7 +134,7 @@
                 android:layout_gravity="center"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
-                android:onClick="VolverAterrizajee"
+
                 android:layout_marginEnd="32dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/black"

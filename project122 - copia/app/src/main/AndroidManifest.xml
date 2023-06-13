@@ -12,6 +12,7 @@
         <activity
             android:name=".pruebaa"
             android:exported="false" />
+
         <activity
             android:name=".Activity_seccionbono"
             android:exported="false" />
@@ -36,6 +37,7 @@
         <activity
             android:name=".Main_Login"
             android:exported="false" />
+        <activity android:name="com.example.project122.LoginProveedorrr" />
         <activity
             android:name=".Activity_Aterrizaje"
             android:exported="false" />

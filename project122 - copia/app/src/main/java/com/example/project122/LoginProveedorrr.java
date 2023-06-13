@@ -6,17 +6,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainActivity2 extends AppCompatActivity {
+public class LoginProveedorrr extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_login_proveedorrr);
     }
 
-    public void VolverAterrizaje(View v) {
+    //HomeProveedor
 
-        Intent intent = new Intent(MainActivity2.this, Activity_Aterrizaje.class);
+    public void HomeProveedor(View v) {
+
+        Intent intent = new Intent(LoginProveedorrr.this, Activity_home.class);
         startActivity(intent);
     }
 }

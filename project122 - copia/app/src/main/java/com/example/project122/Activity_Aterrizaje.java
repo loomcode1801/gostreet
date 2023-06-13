@@ -68,9 +68,18 @@ public class Activity_Aterrizaje extends AppCompatActivity {
 
         }
     };
-    public void navegar (View view){
-        Intent miIntent =new Intent(Activity_Aterrizaje.this,Activity_crearbono.class);
-        startActivity(miIntent);
+    public void VerDetalleBono(View v) {
+
+        Intent intent = new Intent(Activity_Aterrizaje.this, MainActivity2.class);
+        startActivity(intent);
     }
+
+    public void VerPerfilCliente(View v) {
+
+        Intent intent = new Intent(Activity_Aterrizaje.this, Activity_Perfil.class);
+        startActivity(intent);
+    }
+
+
 
 }

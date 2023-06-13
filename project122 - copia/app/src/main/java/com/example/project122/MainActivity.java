@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     dialog.dismiss();
                     Toast.makeText(MainActivity.this, "Proveedor seleccionado", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(MainActivity.this, Main_Login.class);
+                    Intent intent = new Intent(MainActivity.this, LoginProveedorrr.class);
                     startActivity(intent);
                 }
             });
@@ -99,4 +99,6 @@ public class MainActivity extends AppCompatActivity {
         dialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
         dialog.getWindow().setGravity(Gravity.BOTTOM);
     }
+
+
 }

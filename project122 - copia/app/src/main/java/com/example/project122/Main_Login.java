@@ -17,7 +17,13 @@ public class Main_Login extends AppCompatActivity {
 
     public void seccionBonos(View v) {
 
-        Intent intent = new Intent(Main_Login.this, Activity_seccionbono.class);
+        Intent intent = new Intent(Main_Login.this, Activity_Aterrizaje.class);
+        startActivity(intent);
+    }
+
+    public void VolverAterrizajee(View v) {
+
+        Intent intent = new Intent(Main_Login.this, MainActivity.class);
         startActivity(intent);
     }
 }

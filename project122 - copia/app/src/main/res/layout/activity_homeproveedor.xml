@@ -78,6 +78,8 @@
                         android:orientation="horizontal">
 
 
+
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -575,6 +577,8 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+
+
                 </LinearLayout>
 
 
@@ -590,24 +594,24 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/linearLayout">
 
-
-                    <TextView
-                        android:id="@+id/btnverdetalle10"
-                        android:layout_width="83dp"
-                        android:layout_height="27dp"
-                        android:layout_marginEnd="16dp"
-                        android:layout_marginBottom="56dp"
+                    <Button
+                        android:id="@+id/crearBonos"
+                        style="@android:style/Widget.Button"
+                        android:layout_width="85dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="right"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="20dp"
+                        android:onClick="crearBonoss"
                         android:background="@drawable/appointment_btn_background"
-                        android:gravity="center"
-                        android:paddingStart="8dp"
-                        android:paddingEnd="8dp"
-                        android:text="Crear Bono"
-                        android:textColor="#ffffff"
+                        android:text="Crear Bonos"
+                        android:textColor="#F4EFEF"
                         android:textSize="10sp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="10.0" />
+                        app:layout_constraintBottom_toTopOf="@+id/ver_Bonos"
+                        app:layout_constraintEnd_toEndOf="@+id/ver_Bonos"
+                        app:layout_constraintStart_toStartOf="@+id/ver_Bonos"
+                        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
 
                     <Button
                         android:id="@+id/ver_Bonos"
@@ -618,12 +622,14 @@
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/appointment_btn_background"
                         android:text="Ver Bonos"
+                        android:onClick="VerBonos"
                         android:textColor="#F4EFEF"
                         android:textSize="10sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.946"
                         app:layout_constraintStart_toStartOf="parent" />
+
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -681,6 +687,7 @@
                         android:textColor="@color/white"
                         android:textSize="37sp"
                         android:textStyle="bold"
+
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/imageView3" />

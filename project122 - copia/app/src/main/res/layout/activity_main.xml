@@ -62,7 +62,7 @@
                     android:background="@drawable/appointment_btn_background"
                     android:text="Ver Perfil"
                     android:textColor="#F4EFEF"
-
+                    android:onClick="VerPerfilCliente"
                     android:textSize="15sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +195,7 @@
                         android:paddingStart="8dp"
                         android:paddingEnd="8dp"
                         android:text="Ver Detalles"
-                        android:onClick="navegar"
+                        android:onClick="VerDetalleBono"
                         android:textColor="#ffffff"
                         android:textSize="10sp"
                         app:layout_constraintBottom_toBottomOf="parent"
@@ -304,7 +304,7 @@
                         android:layout_height="20sp"
                         android:layout_marginStart="28dp"
                         android:layout_marginTop="66dp"
-
+                        android:onClick="VerDetalleBono"
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/appointment_btn_background"
                         android:gravity="center"
@@ -417,7 +417,7 @@
                         android:layout_height="20sp"
                         android:layout_marginStart="28dp"
                         android:layout_marginTop="66dp"
-
+                        android:onClick="VerDetalleBono"
                         android:layout_marginBottom="16dp"
                         android:background="@drawable/appointment_btn_background"
                         android:gravity="center"
